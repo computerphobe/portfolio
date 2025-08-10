@@ -1,0 +1,55 @@
+.output {
+  margin: 8px 0 16px 0;
+  padding: 12px;
+  background: rgba(0, 255, 136, 0.05);
+  border-left: 3px solid var(--text-color);
+  border-radius: 0 8px 8px 0;
+  color: var(--primary);
+  line-height: 1.6;
+  font-family: 'Fira Code', monospace;
+  position: relative;
+  overflow-x: auto;
+}
+
+.output::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(
+    to bottom,
+    var(--text-color),
+    var(--secondary)
+  );
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.output a {
+  color: var(--secondary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.output a:hover {
+  color: var(--accent);
+  text-shadow: 0 0 8px var(--accent);
+}
+
+.output p {
+  margin: 0;
+}
+
+.output pre {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px;
+  border-radius: 4px;
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+}

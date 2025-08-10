@@ -14,10 +14,22 @@ export default function Input({ command, onSubmit }) {
 
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
-      <label htmlFor="command">
-        <span style={{ color: "#ff9e64" }}>λ</span> ::{" "}
-        <span style={{ color: "var(--primary)" }}>~</span>{" "}
-        <span style={{ color: "var(--secondary)" }}>&gt;&gt;</span>
+      <label htmlFor="command" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <span style={{ 
+          color: "var(--accent)", 
+          fontSize: '16px',
+          textShadow: '0 0 10px var(--accent)'
+        }}>◉</span>
+        <span style={{ 
+          color: "var(--primary)",
+          textShadow: '0 0 8px var(--primary)'
+        }}>portfolio</span>
+        <span style={{ color: "var(--text-color)" }}>@</span>
+        <span style={{ 
+          color: "var(--secondary)",
+          textShadow: '0 0 8px var(--secondary)'
+        }}>terminal</span>
+        <span style={{ color: "var(--text-color)" }}>:~$</span>
       </label>
 
       <input

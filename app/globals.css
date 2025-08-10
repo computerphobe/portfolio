@@ -1,10 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
 
 :root {
-  --text-color: #35b041;
+  --text-color: #00ff88;
   --primary: #ffffff;
-  --secondary: #4dbbcf;
-  --background-color: #000000;
+  --secondary: #00d4ff;
+  --accent: #ff6b9d;
+  --background-color: #0a0a0a;
+  --border-color: rgba(0, 255, 136, 0.2);
+  --shadow-color: rgba(0, 255, 136, 0.1);
+  --glow-color: rgba(0, 255, 136, 0.3);
 }
 
 html,
@@ -34,20 +38,70 @@ body {
 
 body {
   padding: 16px;
-  background-color: var(--background-color);
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  background-attachment: fixed;
   color: var(--text-color);
   font-size: 15px;
   line-height: 1.6;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Add animated background particles */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, var(--glow-color), transparent),
+    radial-gradient(2px 2px at 40px 70px, var(--secondary), transparent),
+    radial-gradient(1px 1px at 90px 40px, var(--accent), transparent),
+    radial-gradient(1px 1px at 130px 80px, var(--glow-color), transparent),
+    radial-gradient(2px 2px at 160px 30px, var(--secondary), transparent);
+  background-repeat: repeat;
+  background-size: 200px 150px;
+  animation: sparkle 20s linear infinite;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+@keyframes sparkle {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-150px); }
 }
 
 h1 {
   color: var(--primary);
   font-size: 32px;
+  text-shadow: 0 0 20px var(--glow-color);
+  animation: glow 2s ease-in-out infinite alternate;
+  transform: translateZ(0); /* Create new stacking context */
+  position: relative;
+  z-index: 1;
+  height: 60px; /* Fixed height to prevent layout shifts */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 20px 0; /* Consistent margins */
+}
+
+@keyframes glow {
+  from { 
+    text-shadow: 0 0 20px var(--glow-color), 0 0 30px var(--glow-color);
+    transform: translateZ(0);
+  }
+  to { 
+    text-shadow: 0 0 30px var(--glow-color), 0 0 40px var(--glow-color);
+    transform: translateZ(0);
+  }
 }
 
 @media only screen and (min-width: 600px) {
@@ -66,4 +120,48 @@ h3 {
 
 a {
   color: var(--secondary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+a:hover {
+  color: var(--accent);
+  text-shadow: 0 0 8px var(--accent);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  body {
+    padding: 8px;
+  }
+  
+  h1 {
+    font-size: 28px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 4px;
+  }
+  
+  h1 {
+    font-size: 24px !important;
+  }
 }

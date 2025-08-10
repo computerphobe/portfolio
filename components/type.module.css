@@ -1,0 +1,33 @@
+.typing-container {
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  will-change: transform;
+  height: 60px; /* Fixed height to prevent layout shifts */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.typing-container span {
+  font-family: 'Fira Code', monospace;
+  font-weight: 500;
+  display: inline-block;
+  min-height: 1.2em;
+  transform: translateZ(0);
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden; /* Hide overflow if text is too long */
+}
+
+/* Custom cursor styling */
+.typed-cursor {
+  color: var(--accent) !important;
+  animation: blink 1s infinite;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}

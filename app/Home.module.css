@@ -1,11 +1,28 @@
 .container {
   min-height: 100vh;
-  padding: 0 0.5rem;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100vh;
-  max-width: 600px;
+  max-width: 800px;
+  width: 100%;
+  position: relative;
+}
+
+.container > * {
+  flex-shrink: 0; /* Prevent flex items from shrinking */
+}
+
+.container h1 {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.container > div:last-child {
+  flex: 1;
+  position: relative;
 }
 
 .help {
@@ -19,14 +36,35 @@
   width: 64px;
   height: 64px;
   z-index: 1000;
-  background-color: #ffdd00;
+  background: linear-gradient(135deg, #ffdd00, #ff9500);
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 100%;
+  box-shadow: 0 4px 20px rgba(255, 221, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.coffee:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(255, 221, 0, 0.5);
 }
 
 .coffeeIcon {
   width: 48px;
   height: 48px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 12px;
+  }
 }

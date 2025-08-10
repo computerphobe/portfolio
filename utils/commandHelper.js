@@ -74,22 +74,62 @@ export const CONTENTS = {
     ).join("") +
     `<br />
       <div class="command">Type one of the above to view. For eg. <span style="color: var(--secondary)">about</span></div>`,
-  about: () => `My name is Aryan. I am ${getAge(
-    "December 25, 2005"
-  )} and I\'m a cyber security researcher
-    <br/><br/>
-    I love scripting in bash Python and solving capture the flags, and learning about anything new that technology has to offer
-    <br /><br />
-    I am a freshman at <a href="https://marwadiuniversity.ac.in/" target="_blank">Marwadi university</a>.
-    <br />
+  about: () => `I'm Aryan Bharadiya — a drone engineer, embedded systems specialist, AI researcher, and robotics architect passionate about building autonomous systems that bridge the gap between imagination and reality.</br></br> My expertise spans Pixhawk, Jetson Nano, MAVLink, ROS, SLAM, object detection, and real-time mission planning, with a strong focus on creating intelligent aerial platforms.
+
+Beyond robotics, I dive deep into cybersecurity—developing honeypots, custom WAFs, OSINT toolkits, and advanced network monitoring solutions.</br></br>
+ I believe in engineering systems that are not only high-performing but also resilient against evolving threats.</br></br>
+
+Whether it's designing a compliant suspension for a search-and-rescue rover, optimizing AI inference on edge devices, or architecting secure, scalable software, I approach every project with precision, creativity, and a relentless drive to solve problems that matter.</br></br>
+
+When I'm not deep in code or CAD models, you'll find me in the gym, learning guitar, or exploring new challenges that push both my technical and creative boundaries.
   `,
   education:
-    () => `I am a high school graduate from Kendriya vidyalaya, Jamnagar and a freshman at <a href="https://marwadiuniversity.ac.in/" target="_blank"> Marwadi university</a> .`,
+    () => `I am a high school graduate from Kendriya vidyalaya, Jamnagar and a second year student at <a href="https://marwadiuniversity.ac.in/" target="_blank"> Marwadi university</a> .`,
   skills: () => `
-  I am experienced with scripting in multiple languages like python, rust ,bash:<br />
-  <div class="skill"><b>core</b>: Networking, scripting, malware analysis, reverse engineering<br /></div>
-  <div class="skill"><b>Tools</b>: metasploit framework, wireshark, burpsuite <br /></div>
-  I also have knowledge of basic IoT Devices and their working projects related to it can be found <a href="https://github.com/computerphobe" target="_blank">here</a>.
+<h2>Skills</h2>
+Cybersecurity:
+
+Web Application Security (Custom WAF, OWASP Top 10, SQL Injection, XSS, CSRF)
+
+Network Security (Packet Sniffing, Threat Signature Matching, Honeypots)
+
+OSINT Techniques & Threat Intelligence Aggregation
+</br></br>
+Programming & Development:
+
+Languages: C++, Python, Java
+
+Backend: Node.js, Express.js
+
+Frontend: React.js, Tailwind CSS
+
+Databases: MySQL, MongoDB
+
+Scripting & Automation: Bash, Python scripts
+</br></br>
+AI & Machine Learning:
+
+LLM Integration, Prompt Engineering
+
+Computer Vision (OpenCV, YOLO, TensorFlow)
+
+Generative AI (Stable Diffusion, DALL·E, Bark, ElevenLabs)
+</br></br>
+Networking & Systems:
+
+TCP/IP, UDP, Socket Programming
+
+Linux System Administration
+
+API Development & Integration
+</br></br>
+Tools & Platforms:
+
+Git, GitHub, Docker
+
+Wireshark, Burp Suite, Nmap
+
+FFmpeg, MoviePy
 <br /><br />
   `,
   projects: getProjects,
